@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Medios - Presentación (Roboto)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cambio de Inter a Roboto */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #1a1a1a;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            padding: 4rem;
+            transition: all 0.5s ease;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .accent-border {
+            border-left: 8px solid #ff6b00;
+            padding-left: 2rem;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-weight: 900;
+            color: #e5e5e5;
+            font-size: 6rem;
+            z-index: -1;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 50;
+        }
+
+        .btn {
+            background: #1a1a1a;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        .btn:hover {
+            background: #ff6b00;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #ff6b00;
+            transition: width 0.3s ease;
+        }
+
+        .key-point {
+            margin-bottom: 1.5rem;
+        }
+
+        .orange-text {
+            color: #ff6b00;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="slide-container">
+        <!-- Diapositiva 01 -->
+        <div class="slide active bg-white">
+            <span class="slide-number">01</span>
+            <div class="accent-border">
+                <h1 class="text-6xl font-black uppercase mb-4 tracking-tighter">Los Tres Ejes de Clasificación</h1>
+                <p class="text-2xl text-gray-500 max-w-2xl font-light">Marco conceptual para entender la información y los medios.</p>
+            </div>
+        </div>
+
+        <!-- Diapositiva 02 -->
+        <div class="slide bg-white">
+            <span class="slide-number">02</span>
+            <div class="accent-border">
+                <h2 class="text-xl font-bold uppercase orange-text mb-2">Eje 1</h2>
+                <h1 class="text-5xl font-black mb-8 uppercase">Tiempo y Frecuencia</h1>
+                <div class="grid grid-cols-2 gap-12">
+                    <div class="key-point">
+                        <h3 class="text-2xl font-bold mb-2">Continuo</h3>
+                        <p class="text-gray-600 font-light">Flujo ininterrumpido (ej. rampa, temperatura real).</p>
+                    </div>
+                    <div class="key-point">
+                        <h3 class="text-2xl font-bold mb-2">Discreto</h3>
+                        <p class="text-gray-600 font-light">Por pasos definidos (ej. escalera, notas de examen).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 03 -->
+        <div class="slide bg-white">
+            <span class="slide-number">03</span>
+            <div class="accent-border">
+                <h2 class="text-xl font-bold uppercase orange-text mb-2">Eje 2</h2>
+                <h1 class="text-5xl font-black mb-8 uppercase">Naturaleza del Valor</h1>
+                <div class="grid grid-cols-2 gap-12">
+                    <div class="key-point">
+                        <h3 class="text-2xl font-bold mb-2">Analógico</h3>
+                        <p class="text-gray-600 font-light">Copia física y proporcional (ej. vinilo, reloj de agujas).</p>
+                    </div>
+                    <div class="key-point">
+                        <h3 class="text-2xl font-bold mb-2">Digital</h3>
+                        <p class="text-gray-600 font-light">Traducción a sistema binario (0 y 1). Inmune al ruido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 04 -->
+        <div class="slide bg-white">
+            <span class="slide-number">04</span>
+            <div class="accent-border">
+                <h2 class="text-xl font-bold uppercase orange-text mb-2">Eje 3</h2>
+                <h1 class="text-5xl font-black mb-8 uppercase">Modo de Acceso</h1>
+                <div class="grid grid-cols-2 gap-12">
+                    <div class="key-point">
+                        <h3 class="text-2xl font-bold mb-2">Lineal</h3>
+                        <p class="text-gray-600 font-light">Recorrido secuencial obligatorio (ej. cinta VHS).</p>
+                    </div>
+                    <div class="key-point">
+                        <h3 class="text-2xl font-bold mb-2">No Lineal</h3>
+                        <p class="text-gray-600 font-light">Acceso aleatorio y directo al dato (ej. SSD, memoria RAM).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 05 -->
+        <div class="slide bg-black text-white">
+            <span class="slide-number text-gray-800">05</span>
+            <div class="accent-border">
+                <h1 class="text-5xl font-black mb-8 uppercase">Origen de los Nuevos Medios</h1>
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold orange-text">Convergencia (1830-1936)</h2>
+                    <p class="text-xl mt-2 text-gray-400 font-light">Tecnología Mediática (Daguerrotipo) + Tecnología Informática (Babbage).</p>
+                </div>
+                <div class="p-6 bg-zinc-900 border border-zinc-800">
+                    <p class="text-lg italic font-light"><span class="orange-text font-bold">Síntesis:</span> Konrad Zuse utiliza película de cine para controlar código binario.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 06 -->
+        <div class="slide bg-white">
+            <span class="slide-number">06</span>
+            <div class="accent-border">
+                <h2 class="text-xl font-bold uppercase orange-text mb-2">Principio 1</h2>
+                <h1 class="text-5xl font-black mb-8 uppercase">Representación Numérica</h1>
+                <ul class="space-y-4 text-2xl font-light">
+                    <li class="flex items-center gap-4">
+                        <span class="w-8 h-1 bg-black"></span>
+                        Los medios se vuelven objetos matemáticos.
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <span class="w-8 h-1 bg-orange-500"></span>
+                        Todo elemento es programable y computable.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Diapositiva 07 -->
+        <div class="slide bg-white">
+            <span class="slide-number">07</span>
+            <div class="accent-border">
+                <h2 class="text-xl font-bold uppercase orange-text mb-2">Principio 2</h2>
+                <h1 class="text-5xl font-black mb-8 uppercase">Modularidad</h1>
+                <div class="max-w-3xl">
+                    <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter text-gray-400">Estructura Fractal</h3>
+                    <p class="text-xl text-gray-600 mb-6 font-light">Los elementos (píxeles, scripts) son independientes.</p>
+                    <p class="text-xl font-bold">Se pueden agrupar o modificar sin alterar la identidad de las partes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 08 -->
+        <div class="slide bg-white">
+            <span class="slide-number">08</span>
+            <div class="accent-border">
+                <h2 class="text-xl font-bold uppercase orange-text mb-2">Principio 3</h2>
+                <h1 class="text-5xl font-black mb-8 uppercase">Automatización</h1>
+                <p class="text-2xl mb-8 font-light">El ordenador asume funciones de creación y manipulación.</p>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="p-4 bg-gray-100 font-bold text-center uppercase text-sm">Escenas generadas</div>
+                    <div class="p-4 bg-gray-100 font-bold text-center uppercase text-sm">Filtros automáticos</div>
+                    <div class="p-4 bg-gray-100 font-bold text-center uppercase text-sm">Motores de búsqueda</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 09 -->
+        <div class="slide bg-white">
+            <span class="slide-number">09</span>
+            <div class="accent-border">
+                <h2 class="text-xl font-bold uppercase orange-text mb-2">Principio 4</h2>
+                <h1 class="text-5xl font-black mb-8 uppercase">Variabilidad</h1>
+                <p class="text-2xl mb-6 font-light">El objeto no es algo fijo; existen infinitas versiones.</p>
+                <div class="border-t border-b border-gray-200 py-6">
+                    <p class="text-xl text-gray-600 font-light">Basado en la personalización y la interactividad.</p>
+                    <p class="text-sm uppercase tracking-widest mt-4 orange-text font-bold">Lógica post-industrial</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 10 -->
+        <div class="slide bg-black text-white">
+            <span class="slide-number text-gray-800">10</span>
+            <div class="accent-border">
+                <h2 class="text-xl font-bold uppercase orange-text mb-2">Principio 5</h2>
+                <h1 class="text-5xl font-black mb-8 uppercase">Trascodificación Cultural</h1>
+                <div class="grid grid-cols-2 gap-8 mb-8">
+                    <div class="p-6 border border-zinc-700 bg-zinc-900/50">
+                        <h3 class="font-bold mb-2 orange-text uppercase text-xs tracking-widest">Capa Cultural</h3>
+                        <p class="text-gray-300 italic font-light">Narrativa, enciclopedia, lenguaje.</p>
+                    </div>
+                    <div class="p-6 border border-zinc-700 bg-zinc-900/50">
+                        <h3 class="font-bold mb-2 orange-text uppercase text-xs tracking-widest">Capa Informática</h3>
+                        <p class="text-gray-300 italic font-light">Estructuras de datos, algoritmos.</p>
+                    </div>
+                </div>
+                <p class="text-2xl font-light">La lógica del software redefine la cultura tradicional.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="changeSlide(-1)">Anterior</button>
+        <button class="btn" onclick="changeSlide(1)">Siguiente</button>
+    </div>
+
+    <div class="progress-bar" id="progress"></div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const percent = ((currentSlide + 1) / slides.length) * 100;
+            progress.style.width = percent + '%';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+
+        let touchstartX = 0;
+        let touchendX = 0;
+        
+        document.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            if (touchendX < touchstartX - 50) changeSlide(1);
+            if (touchendX > touchstartX + 50) changeSlide(-1);
+        });
+
+        updateProgress();
+    </script>
+</body>
+</html>
